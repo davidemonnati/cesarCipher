@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Just a simple Cesar Cipher project in C.
+Just a simple Cesar Cipher program in C.
 
 ### Usage
 USAGE: CC [OPTION] [SOURCE] [KEY]
