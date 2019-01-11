@@ -4,6 +4,14 @@
 
 Just a simple Cesar Cipher program in C.
 
+### Install
+CC is installed by running this commands in your terminal:
+
+    git clone https://github.com/davidemonnati/cesarCipher.git
+    cd cesarCipher
+    make
+    ./cc
+
 ### Usage
 USAGE: CC [OPTION] [SOURCE] [KEY]
 Example: CC -e file.txt 5
