@@ -7,10 +7,17 @@ Just a simple Cesar Cipher program in C.
 ### Install
 CC is installed by running this commands in your terminal:
 
-    git clone https://github.com/davidemonnati/cesarCipher.git
-    cd cesarCipher
-    make
-    ./cc
+    $ git clone https://github.com/davidemonnati/cesarCipher.git
+    $ cd cesarCipher
+    $ make
+    $ sudo make install
+    $ cc
+
+### Uninstall
+
+    $ git clone https://github.com/davidemonnati/cesarCipher.git
+    $ cd cesarCipher
+    $ sudo make uninstall
 
 ### Usage
 USAGE: CC [OPTION] [SOURCE] [KEY]
