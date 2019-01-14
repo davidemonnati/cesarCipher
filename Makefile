@@ -1,18 +1,36 @@
 CC=gcc
 
 VPATH = src include
-vpath %.c src
-vpath %.h include
+HDIR = include
 
-CFLAGS  = -g -Wall
+vpath %.c src
+vpath %.h $(HDIR)
+
+OBJDIR=obj
+CFLAGS  = -g -Wall -I$(HDIR)
 
 all: CC
 
-CC: cc.o cipher.o
-	gcc $(CFLAGS) -o cc cc.o cipher.o
+CC: $(OBJDIR)/cc.o $(OBJDIR)/cipher.o 
+	$(CC) $^ $(CFLAGS) -o $@
 
-CC.o: 
-	gcc -c $<
-	
+$(OBJDIR)/%.o: %.c %.h
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(OBJDIR)/cc.o: cc.c cipher.c cipher.h
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+.PONY: install uninstall clean
+
+install:
+	@echo "Installing cesarCipher..."
+	@cp ./CC /usr/local/bin/CC
+	@echo "Done" 
+
+uninstall:
+	@echo "Uninstalling cesarCipher..."
+	@rm /usr/local/bin/CC
+	@echo "Done."
+
 clean:
-	rm CC.o CC
+	rm $(OBJDIR)/*.o CC
