@@ -24,6 +24,7 @@ $(OBJDIR)/cc.o: cc.c cipher.c cipher.h
 
 install:
 	@echo "Installing cesarCipher..."
+	@rm ./obj/.empty
 	@cp ./CC /usr/local/bin/CC
 	@echo "Done" 
 
